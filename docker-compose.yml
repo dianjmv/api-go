@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:4.4
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    command: mongod --noauth --bind_ip_all --replSet rs0 --oplogSize 128
+    entrypoint: ["sh", "-c", "mongo --eval 'rs.initiate()' && mongo < /docker-entrypoint-initdb.d/init-mongo.js"]
+    volumes:
+      - mongo-data:/data/db
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+
+  go-api:
+    build: .
+    depends_on:
+      - mongo
+    ports:
+      - "8080:8080"
+    environment:
+      MONGO_URI: mongodb://mongo:27017
+
+volumes:
+  mongo-data:
