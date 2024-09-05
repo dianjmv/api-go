@@ -1,8 +1,8 @@
 package mongo
 
 import (
+	"api-go/internal/client"
 	"context"
-	"github.com/dianjmv/api-go/internal/client"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 )

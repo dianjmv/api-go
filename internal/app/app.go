@@ -1,13 +1,13 @@
 package app
 
 import (
+	clientHttp "api-go/internal/client/delivery/http"
+	"api-go/internal/client/repository/mongo"
+	"api-go/internal/client/usecase"
+	portfolioHttp "api-go/internal/clientportfolio/delivery/http"
+	portfolioMongo "api-go/internal/clientportfolio/repository/mongo"
+	portfolioUsecase "api-go/internal/clientportfolio/usecase"
 	"context"
-	clientHttp "github.com/dianjmv/api-go/internal/client/delivery/http"
-	"github.com/dianjmv/api-go/internal/client/repository/mongo"
-	"github.com/dianjmv/api-go/internal/client/usecase"
-	portfolioHttp "github.com/dianjmv/api-go/internal/clientportfolio/delivery/http"
-	portfolioMongo "github.com/dianjmv/api-go/internal/clientportfolio/repository/mongo"
-	portfolioUsecase "github.com/dianjmv/api-go/internal/clientportfolio/usecase"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"log"

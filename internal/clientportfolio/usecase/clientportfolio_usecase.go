@@ -1,8 +1,8 @@
 package usecase
 
 import (
+	"api-go/internal/clientportfolio"
 	"context"
-	"github.com/dianjmv/api-go/internal/clientportfolio"
 )
 
 type ClientPortfolioUsecase interface {

@@ -1,9 +1,9 @@
 package http
 
 import (
+	"api-go/internal/clientportfolio/usecase"
 	"context"
 	"encoding/json"
-	"github.com/dianjmv/api-go/internal/clientportfolio/usecase"
 	"net/http"
 )
 
