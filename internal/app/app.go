@@ -30,7 +30,7 @@ func Run() {
 		log.Fatal(err)
 	}
 
-	clientRepo := mongo.NewClientRepository(client.Database("clientDB"))
+	clientRepo := mongoRepository.NewClientRepository(client.Database("test"))
 	clientUsecase := usecase.NewClientUsecase(clientRepo)
 	clientHandler := clientHttp.NewClientHandler(clientUsecase)
 
